@@ -42,12 +42,12 @@ The contents of the file look as follows:
 
 You should change these values as required for your environment, however this file MUST contain all the values if you require them changed or not
 
-The  you will most likely want to change are:
+The values you will most likely want to change are:
 
 * PATH_TO_PHP_EXE ~ you should set this to the full absolute path to your php executable file.
 * DEFAULT_SERVICE_PATH ~ you should set this to the full absolute path to the directory in whish your service classes and configuration file now live.
 
-Next ensure you have your logging files configured correctly and that any required direcvtories exist in the file system and have appropriate permissions for the launching user.
+Next ensure you have your logging files configured correctly and that any required directories exist in the file system and have appropriate permissions for the launching user.
 
 ### Running the server example
 

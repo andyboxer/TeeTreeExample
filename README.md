@@ -112,10 +112,10 @@ In the exampleService.log file you will see a log of the service constructor and
         Date: 2012-08-01 06:19:47, Origin: unknown, Code: 0, Message: TeeTree worker waiting
         Date: 2012-08-01 06:19:57, Origin: unknown, Code: 0, Message: TeeTree worker exiting
  
- You will notice that the worker thread does not exit immediately ( these will be reused in subsequent revisions of the code )
+You will notice that the worker thread does not exit immediately ( these will be reused in subsequent revisions of the code )
  
- ### In conclusion
+### In conclusion
  
- This is all that is required to get off the ground with TeeTree, If you take a look at the example files the comments should be enough for you to start creating your own service classes and execute them.
+This is all that is required to get off the ground with TeeTree, If you take a look at the example files the comments should be enough for you to start creating your own service classes and execute them.
  
- For for further details eg. configuring for execution on a remote host, controlling the TeeTree controller, gathering controller stats and othe admin tasks pls see the project wiki.
+For for further details eg. configuring for execution on a remote host, controlling the TeeTree controller, gathering controller stats and othe admin tasks pls see the project wiki.

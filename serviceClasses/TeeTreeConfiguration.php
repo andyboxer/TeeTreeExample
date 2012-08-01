@@ -26,8 +26,10 @@ class TeeTreeConfiguration
     const PATH_TO_PHP_EXE = "/usr/local/zend/bin/php";                          // the path to the php executable file - this MUST be an absolute path
     const DEFAULT_ERROR_LOG = "/var/log/TeeTree/exampleError.log";              // the server error log
     const DEFAULT_SERVER_LOG = "/var/log/TeeTree/exampleServer.log";            // the server message log
-    const DEFAULT_TEST_LOG = "/var/log/TeeTree/exampleService.log";             // the test service output log
     const ENABLE_CALL_TRACING = true;                                           // enable tracing of messages read and written by the service server call handler. Useful for debugging service classes
     const CALL_TRACING_LOG = "/var/log/TeeTree/exampleCall.log";                // the path to the call tracing log file
+
+    // This is parameter for the use of this example project only it will have no meaning for nor effect upon the operation of the TeeTree RSI
+    const EXAMPLE_DEBUG_LOG = "/var/log/TeeTree/exampleServiceClass.log";       // the path to the E
 }
 ?>

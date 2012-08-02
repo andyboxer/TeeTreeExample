@@ -8,11 +8,10 @@
  */
 
 // First ensure that it is our version of TeeTreeConfiguration that loads first
-$configurationFile = __DIR__. "/../serviceClasses/TeeTreeConfiguration.php";
-require_once($configurationFile);
+require_once( __DIR__. "/../serviceClasses/TeeTreeConfiguration.php");
 
 // Now we call the bootstrap to setup the TeeTree environment ( I think I'll call this a Kettle :)
-require_once("/home/webapps/TeeTree/config/TeeTreeBootStrap.php");
+require_once("/home/webapps/TeeTree/bootstrap/TeeTreeBootStrap.php");
 
 if(isset($argv[1]) && $argv[1] === "start")
 {

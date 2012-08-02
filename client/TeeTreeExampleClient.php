@@ -27,7 +27,7 @@ OUTPUT;
 require_once(__DIR__. "/../serviceClasses/TeeTreeConfiguration.php");
 
 // Note: this file is set to be the same instance as the server configuration, it may be different if required.
-require_once("/home/webapps/TeeTree/config/TeeTreeBootStrap.php");
+require_once("/home/webapps/TeeTree/bootstrap/TeeTreeBootStrap.php");
 
 // Now we can declare our service proxy classes
 // Here we define the class we wish to use as a proxy and configure the host and port of the TeeTree Controller
@@ -58,7 +58,7 @@ echo "The return value from shuffle method call is : {$exampleObject->shuffle("t
 
 // If you uncomment the following line you can test the through put of a single request to a single object
 $time = microtime(true);
-for($i = 0; $i < 5000; $i++) echo "{$exampleObject->shuffle("this is a nice day for a walk in the park")} No. {$i}\n";
+for($i = 0; $i < 50; $i++) echo "{$exampleObject->shuffle("this is a nice day for a walk in the park")} No. {$i}\n";
 print("Time taken in seconds = ". (microtime(true) - $time). "\n");
 
 

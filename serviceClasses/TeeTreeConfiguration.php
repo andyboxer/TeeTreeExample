@@ -22,6 +22,7 @@ class TeeTreeConfiguration
     const ACCEPT_TIMEOUT = 10;                                                  // socket accept timeout for all socket listeners
     const READWRITE_TIMEOUT = 600;                                              // timeout for socket read and write operations
     const CLIENT_CONNECT_TIMEOUT = 93;                                          // timeout for connection to the TeeTree controller
+    const CONSTRUCTOR_MAX_RETRY = 5;                                            // The maximum number of times to try and send a constructor response back on a TeeTree controller pipe.
     const DEFAULT_SERVICE_PATH = "/home/webapps/TeeTreeExample/serviceClasses";	// the service class directory for the test scripts
     const PATH_TO_PHP_EXE = "/usr/local/zend/bin/php";                          // the path to the php executable file - this MUST be an absolute path
     const DEFAULT_ERROR_LOG = "/var/log/TeeTree/exampleError.log";              // the server error log
@@ -30,6 +31,6 @@ class TeeTreeConfiguration
     const CALL_TRACING_LOG = "/var/log/TeeTree/exampleCall.log";                // the path to the call tracing log file
 
     // This is parameter for the use of this example project only it will have no meaning for nor effect upon the operation of the TeeTree RSI
-    const EXAMPLE_DEBUG_LOG = "/var/log/TeeTree/exampleServiceClass.log";       // the path to the E
+    const EXAMPLE_DEBUG_LOG = "/var/log/TeeTree/exampleServiceClass.log";       // the path to the Example debugging log
 }
 ?>

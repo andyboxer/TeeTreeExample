@@ -14,8 +14,8 @@ In order to run this script the TeeTree controller must be started see TeeTree/l
 This script will instantiate a TeeTree RSI client object via the TeeTree Controller
 It then makes calls to two methods on the remote object instance.
 
-Access / call logging will be written to the file configured at TeeTreeConfiguration::CALL_TRACING_LOG
-In order to see the message calls created by object instantiation and method invocation you may tail -f  < the value of TeeTreeConfiguration::CALL_TRACING_LOG >
+Access / call logging will be written to the file configured at TeeTreeConfiguration::TEETREE_CALL_LOG
+In order to see the message calls created by object instantiation and method invocation you may tail -f  < the value of TeeTreeConfiguration::TEETREE_CALL_LOG >
 
 Loading environment and defining TeeTree Client proxy classes ...
 
@@ -67,11 +67,11 @@ print("Time taken in seconds = ". (microtime(true) - $time). "\n");
 // php TeeTreeExample/launcher/StartTeeTreeController.php stop
 
 // Try running this script repeatedly and tailing the following log files
-//   DEFAULT_ERROR_LOG
-//   DEFAULT_SERVER_LOG
-//   CALL_TRACING_LOG
+//   TEETREE_ERROR_LOG
+//   TEETREE_SERVER_LOG
+//   TEETREE_CALL_LOG
 //   EXAMPLE_DEBUG_LOG
 
 //  NOTE: The option to enable call trace logging should be turned off in production
-//  i.e. set   ENABLE_CALL_TRACING = false in the configuration file
+//  i.e. set   ENABLE_CALL_LOGGING = false in the configuration file
 //  ( file contention will cause markedly slower performance, but it's good during debug )

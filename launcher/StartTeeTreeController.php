@@ -18,7 +18,7 @@ if(isset($argv[1]) && $argv[1] === "start")
     // Now we can get started and kick off the TeeTree Controller process
     print("TeeTree controller starting ...\n");
     // We start the service controller passing a port nunber and the class path to our services classes ( This is strictly one directory intentionally and must be r/o )
-    TeeTreeController::startServer(TeeTreeConfiguration::DEFAULT_SERVICE_PATH, TeeTreeConfiguration::TEETREE_SERVER_PORT);
+    TeeTreeController::startServer(TeeTreeConfiguration::TEETREE_SERVICE_CLASS_PATH, TeeTreeConfiguration::TEETREE_SERVER_PORT);
     // This process will now continue untill the TeeTreeController::stopServer call is made using the same port no.
 }
 else

@@ -22,11 +22,10 @@ Loading environment and defining TeeTree Client proxy classes ...
 
 OUTPUT;
 
-// In order to first ensure we have a TeeTree Environment ( Kettle :) we include our configuration file and then the bootstrap
-// It is in order to keep things simple here that the service controller port MUST be set in the configuration file
-require_once(__DIR__. "/../serviceClasses/TeeTreeConfiguration.php");
+// First we ensure our service configuration class is loaded before all else.
+require_once(__DIR__. "/../TeeTreeServer/TeeTreeConfiguration.php");
 
-// Note: this file is set to be the same instance as the server configuration, it may be different if required.
+// The TeeTree bootstrap needs to be included to be able to configure and use TeeTree Remote Service Instances
 require_once("/home/webapps/TeeTree/bootstrap/TeeTreeBootStrap.php");
 
 // Now we can declare our service proxy classes

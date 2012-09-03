@@ -38,7 +38,7 @@ class ExampleServiceClass
 
     public function shuffle($message)
     {
-        usleep(333333);
+        //usleep(333333);
         if(!isset($message[0])) return "?";
         // If this method call does not seem to be working check the debug trace at /tmp/debug.log
         // Remove this line if you wish to benchmark the system

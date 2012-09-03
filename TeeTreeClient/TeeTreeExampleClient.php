@@ -32,7 +32,7 @@ require_once("/home/webapps/TeeTree/bootstrap/TeeTreeBootStrap.php");
 // Here we define the class we wish to use as a proxy and configure the host and port of the TeeTree Controller
 // The class name must match and only existing authorised method calls will be available
 // Note to self: add service method manifest to avoid failed method calls
-class ExampleServiceClass extends TeeTreeClient{protected $serviceHost = 'localhost'; protected $serviceControllerPort = TeeTreeConfiguration::TEETREE_SERVER_PORT;}
+class ExampleServiceClass extends TeeTreeClient{protected $serviceHost = TeeTreeConfiguration::TEETREE_SERVER_HOST; protected $serviceControllerPort = TeeTreeConfiguration::TEETREE_SERVER_PORT;}
 
 // Now we simply instantiate the class and use it
 // Note: The constructor sets up tcp connections to the TeeTree controller, instantiates a remote object instance and communicates with it

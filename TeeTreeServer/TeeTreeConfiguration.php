@@ -48,9 +48,6 @@ class TeeTreeConfiguration
     // enable tracing of messages read and written by the service server call handler. Useful for debugging service classes
     const ENABLE_CALL_LOGGING = true;
 
-    // the service class directory for the test scripts
-    const TEETREE_SERVICE_CLASS_PATH = "/home/webapps/TeeTreeExample/TeeTreeServer/ServiceClasses";
-
     // the server error log
     const TEETREE_ERROR_LOG = "/var/log/TeeTree/exampleError.log";
 

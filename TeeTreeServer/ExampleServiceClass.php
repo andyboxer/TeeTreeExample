@@ -42,7 +42,7 @@ class ExampleServiceClass
         if(!isset($message[0])) return "?";
         // If this method call does not seem to be working check the debug trace at /tmp/debug.log
         // Remove this line if you wish to benchmark the system
-        file_put_contents(TeeTreeConfiguration::EXAMPLE_DEBUG_LOG, $message[0], FILE_APPEND);
+        file_put_contents(TeeTreeConfiguration::EXAMPLE_DEBUG_LOG, time(). " :". $message[0]. "\n", FILE_APPEND);
         $retval = str_shuffle($message[0]);
         return "bakatcha: {$retval}";
     }

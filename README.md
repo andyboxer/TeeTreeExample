@@ -5,18 +5,18 @@
 ### Pre-requisites
 
 A working installation of the TeeTree RSI project ( see TeeTree project for details of installation and pre-requisites ).
+For the purposes of this document we will assume a working TeeTree Server directory of /usr/local/TeeTree.
 
 ### Installation
 
-Clone this repository to a directory on your machine, for the purposes of this document we will assume a working directory of /usr/local/TeeTree.
+Clone this repository to a directory on your machine, for the purposes of this document we will assume a client working directory of /usr/local/TeeTreeExample.
 
 #### Created directories
 
 You will find the following directories under your chosen deployment directory:
 
-* client ~ In this directory is a client script that we shall run to utilise the TeeTree RSI.
-* launcher - In this directory is an example of a launcher for the TeeTree Controller, we shall use this to start and stop the Controller.
-* serviceClasses ~ In this directory is an example of a TeeTree remote service class and a configuration file for both client and server.
+* TeeTreeClient ~ In this directory is a client script that we shall run to demonstrate the TeeTree RSI.
+* TeeTreeServer ~ In this directory is an example of a TeeTree remote service class "ExampleServiceClass.php" and a configuration file "TeeTreeConfiguration.php".
 
 ### Configuration
 
@@ -52,10 +52,12 @@ Next ensure you have your logging files configured correctly and that any requir
 ### Running the server example
 
 Once you have configured the TeeTreeConfiguration file appropriately you can then start the TeeTree controller.
-In a terminal navigate to the TeeTreeExample/launcher directory
-execute the following command to start the TeeTree Controller
 
-    php StartTeeTreeController.php start
+Execute the following command to start the TeeTree Controller
+
+    php /usr/local/TeeTree/server/TeeTreeAdmin.php start /usr/local/TeeTreeExample/TeeTreeServer 11511
+    
+This will start the controller listening on port 11511 and using class definition files below the /usr/local/TeeTreeExample/TeeTreeServer only.
     
 This should print 'Controller starting ...' and exit, the TeeTree controller should now be running and waiting for service requests on the configured port ( 11511 in example above )
 The exampleServer.log should now contain the startup messages from the server detailing the service port and host name.
@@ -68,7 +70,7 @@ e.g.
 
 In order to shut down the TeeTree Controller execute the following command
 
-        php StartTeeTreeController.php stop
+        php /usr/local/TeeTree/server/TeeTreeAdmin.php stop /usr/local/TeeTreeExample/TeeTreeServer 11511
         
 This should terminate the TeeTree controller and print the following lines to the exampleServer.log
 
@@ -76,15 +78,15 @@ This should terminate the TeeTree controller and print the following lines to th
         
 ### Running the client example
 
-In order to run the client example you will need to restart the TeeTree controller by executing the start command as above
-
-    php StartTeeTreeController.php start
+In order to run the client example you will need to start the TeeTree controller by executing the start command as above.
     .
-Now you can change directory to the client directory of the deployment.
+Now you can change directory to the TeeTreeClient directory of the deployment.
 
 In order to run the client run the following command:
 
-    php TeeTreeClient.php 
+    php TeeTreeExampleClient.php 
+    
+Note: this will make use of the same configuration file as the server uses to start. In practical use there would be a configuration file for each.
     
 This will instantiate the service class ExampleServiceClass and call the following methods upon it:
 
@@ -100,8 +102,15 @@ This will instantiate the service class ExampleServiceClass and call the followi
         
         bakatcha:   innk l  ai aaahr ohpkr ssdwfteei yit ca
         
+### Test service logging output
+
+Unless you have changed the log path for the example then the TeeTree system logs will be placed at /var/log/TeeTree
+
+The following logs are created during the example execution.
+
+* The exampleCall.log this log contains details of the messages which flow between client and server during remote service invocation.
         
-In the exampleService.log file you will see a log of the service constructor and method invocation messages looking something like as follows:
+In the exampleCall.log file you will see a log of the service constructor and method invocation messages looking something like as follows:
 
         Date: 2012-08-01 06:19:47, Origin: unknown, Code: 0, Message: TeeTree worker waiting
         Date: 2012-08-01 06:19:47, Origin: unknown, Code: 0, Message: TeeTree worker message received : {"serviceClass":"ExampleServiceClass","serviceMethod":"getConstructorParams","serviceData":[],"serviceMessageType":"TEETREE_CALL"}
@@ -113,9 +122,10 @@ In the exampleService.log file you will see a log of the service constructor and
         Date: 2012-08-01 06:19:57, Origin: unknown, Code: 0, Message: TeeTree worker exiting
  
 You will notice that the worker thread does not exit immediately ( these will be reused in subsequent revisions of the code )
+
+* The exampleError.log this log contains details of any runtime errors encountered by the server, this should be empty if the installation is good.
+
+* The exampleServiceClass.log this log is used by the example service instance and records each request recieved by the service worker.
+
  
-### In conclusion
- 
-This is all that is required to get off the ground with TeeTree, If you take a look at the example files the comments should be enough for you to start creating your own service classes and execute them.
- 
-For for further details eg. configuring for execution on a remote host, controlling the TeeTree controller, gathering controller stats and othe admin tasks pls see the project wiki.
+For for further details eg. configuring for execution on a remote host, controlling the TeeTree controller, gathering controller stats and other admin tasks pls see the project wiki.

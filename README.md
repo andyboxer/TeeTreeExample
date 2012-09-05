@@ -102,12 +102,12 @@ Execute the following command to start the TeeTree Controller
     
 This will start the controller listening on port 11511 and using class definition files below the /usr/local/TeeTreeExample/TeeTreeServer only.
     
-This should print 'Controller starting ...' and exit.
+This should print 
+    "TeeTree controller starting  on port 11511 ..." 
+and then exit leaving the TeeTree controller process running in the background.
 
-The TeeTree controller should now be running and waiting for service requests on the configured port ( 11511 in example above )
+The TeeTree controller should now be waiting for service requests on the configured port ( eg. 11511 )
 The /var/log/TeeTree/exampleServer.log should now contain the startup messages from the server detailing the service port and host name.
-
-e.g.
 
         Date: 2012-09-05 19:06:09, Origin: service controller, Code: TTSVR02, Message: Service controller started on port 11511
 

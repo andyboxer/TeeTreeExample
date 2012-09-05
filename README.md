@@ -103,7 +103,9 @@ Execute the following command to start the TeeTree Controller
 This will start the controller listening on port 11511 and using class definition files below the /usr/local/TeeTreeExample/TeeTreeServer only.
     
 This should print 
+
     "TeeTree controller starting  on port 11511 ..." 
+    
 and then exit leaving the TeeTree controller process running in the background.
 
 The TeeTree controller should now be waiting for service requests on the configured port ( eg. 11511 )
@@ -124,7 +126,7 @@ This should terminate the TeeTree controller and print the following lines to th
 To run the client example you will need to start the TeeTree controller by executing the start command as above.
 
     php /usr/local/TeeTree/server/TeeTreeAdmin.php start /usr/local/TeeTreeExample/TeeTreeServer 11511
-    .
+    
 Now change directory to the TeeTreeClient directory of the deployment.
 
 To run the client run the following command:
